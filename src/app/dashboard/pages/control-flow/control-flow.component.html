@@ -1,0 +1,60 @@
+<shared-title [title]="'Control Flow'"></shared-title>
+
+<section class="grid grid-cols-1 md:grid-cols-2 gap-3">
+
+  <div class="bg-white rounded shadow p-10">
+    <h2 class="text-2xl font-bold mb-5">if: {{ showContent() }}</h2>
+
+    <button class="p-2 bg-blue-500 rounded text-white" (click)="toggleContent()">Click </button>
+
+    @if (showContent()) {
+    <p>True</p>
+    } @else {
+    <p>False</p>
+    }
+
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <h1>Sentencia Switch </h1>
+    @switch (grade()) {
+    @case ('A') {
+    <h2 class="text-2xl font-bold mb-5">A</h2>
+    }
+    @case ('B') {
+    <h2 class="text-2xl font-bold mb-5">B</h2>
+    }
+    @case ('F') {
+    <h2 class="text-2xl font-bold mb-5">F</h2>
+    }
+    @default {
+    <h2 class="text-2xl font-bold mb-5">Default</h2>
+    }
+    }
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+
+    <h1>For Loop</h1>
+    <ul>
+      @for (framewor of framworks(); track $index) {
+      <h2 class="text-2xl font-bold mb-5">{{ $index }} - {{ framewor }}</h2>
+      }
+    </ul>
+
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+
+    <h1>For Loop</h1>
+    <ul>
+      @for (framework of framworks2(); track $index) {
+      <h2 class="text-2xl font-bold mb-5">{{ $index }} - {{ framework }}</h2>
+      } @empty {
+      <h2 class="text-2xl font-bold mb-5">No hay frameworks</h2>
+      }
+    </ul>
+
+  </div>
+
+</section>
